@@ -1,3 +1,5 @@
+local SanWareClientXOwner = "yiqbmz"
+
 loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
 if shared.GuiLibrary then
     shared.GuiLibrary["SelfDestruct"]()
@@ -54,6 +56,10 @@ end
 infonotify("SanWareClientX", "Loaded sucessfully!", 4)
 task.wait(1)
 infonotify("Injecting whitelist..")
+if SanWareClientXOwner == SanWareClientXOwner then
+	task.wait(1)
+	infonotify("TEST", "Test", 2)
+end
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Sail100/H/main/checkwhitelisted.lua", true))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Sail100/H/main/whitelisted.lua", true))()
 
