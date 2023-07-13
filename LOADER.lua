@@ -50,10 +50,11 @@ function checklagback()
 	return isnetworkowner(hrp)
 end
 
-GuiLibrary.RemoveObject("XrayOptionsButton")
-GuiLibrary.RemoveObject("SwimOptionsButton")
-GuiLibrary.RemoveObject("ScaffoldOptionsButton")
 
 infonotify("SanWareClientX", "Loaded sucessfully!", 4)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Sail100/H/main/checkwhitelisted.lua", true))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Sail100/H/main/whitelisted.json", true))()
+
+GuiLibrary.RemoveObject("XrayOptionsButton")
+GuiLibrary.RemoveObject("SwimOptionsButton")
+GuiLibrary.RemoveObject("ScaffoldOptionsButton")
