@@ -10,8 +10,6 @@ end
 
 wait(0.5)
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
-
 wait(0.5)
 
 repeat task.wait() until game:IsLoaded()
@@ -71,6 +69,7 @@ local function smxnotify(title, text, delay)
         frame.Frame.Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
     end)
 end
+infonotify("Test", 3)
 
 for _, player in ipairs(game:GetService("Players"):GetPlayers()) do
     for i,v in pairs(whitelisted) do
