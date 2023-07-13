@@ -13,7 +13,7 @@ end
 for _, player in ipairs(game:GetService("Players"):GetPlayers()) do
     for i,v in pairs(whitelisted) do
         if player.Name == whitelisted[i] and whitelisted[i] ~= lplrname then
-            infonotify("Whitelisted User " .. player.Name .. " is a" .. whitelisted.NameTag .. whitelisted.Emoji .. " (" .. whitelisted.Name2Tag .. " ) user", 10)
+            smxnotify("Whitelisted User " .. player.Name .. " is a" .. whitelisted.NameTag .. whitelisted.Emoji .. " (" .. whitelisted.Name2Tag .. " ) user", 10)
         end
     end
 end
@@ -21,7 +21,7 @@ end
 game.Players.PlayerAdded:Connect(function(player)
     for i,v in pairs(whitelisted) do
         if player.Name == whitelisted[i] and whitelisted[i] ~= lplrname then
-            infonotify("Whitelisted User " .. player.Name .. " is a" .. whitelisted.NameTag .. whitelisted.Emoji .. " (" .. whitelisted.Name2Tag .. " ) user", 10)
+            smxnotify("Whitelisted User " .. player.Name .. " is a" .. whitelisted.NameTag .. whitelisted.Emoji .. " (" .. whitelisted.Name2Tag .. " ) user", 10)
         end
     end
 end)
