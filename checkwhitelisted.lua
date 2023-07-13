@@ -1,5 +1,4 @@
 local whitelisted = game:GetService("HttpService"):JSONDecode(game:HttpGet("https://raw.githubusercontent.com/Sail100/H/main/whitelisted.json"))
-    "))
 
 local GuiLibrary = shared.GuiLibrary
 local lplrname = game.Players.LocalPlayer.Name
