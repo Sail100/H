@@ -275,50 +275,29 @@ runcode(function()
 	})
 end)
 
-
-runcode(function()
-	local SuperPanic = GuiLibrary.ObjectsThatCanBeSaved.CombatWindow.Api.CreateOptionsButton({
-		["Name"] = "SanWareKillAura",
-		["Function"] = function(callback)
-			if callback then
-				    local player = game:GetService("Players")
-        local lplr = player.LocalPlayer
-        local cam = workspace.CurrentCamera
-        local KnitClient = debug.getupvalue(require(lplr.PlayerScripts.TS.knit).setup, 6)
-        local SwordCont = KnitClient.Controllers.SwordController
-        
-        local aura = false
-        local DistVal = {["Value"] = 100}
-        
-        local connection
-        
-        function Aura()
-            for i,v in pairs(game.Players:GetChildren()) do
-                if v.Character and v.Name ~= game.Players.LocalPlayer.Name and v.Character:FindFirstChild("HumanoidRootPart") then
-                    local mag = (v.Character.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
-                    if mag <= DistVal["Value"] and v.Team ~= game.Players.LocalPlayer.Team and v.Character:FindFirstChild("Humanoid") then
-                        if v.Character.Humanoid.Health > 0 then
-                            aura = true
-                            SwordCont:swingSwordAtMouse()
-                        end
-                    end
+    runFunction(function()
+        local Disabler = {Enabled = false}
+        Disabler = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
+            Name = "FUCKER",
+            Function = function(callback)
+                if callback then 
+                    task.spawn(function()
+                        repeat
+                            task.wait(0.03)
+                            local item = getItemNear("scythe")
+                            if item and lplr.Character.HandInvItem.Value == item.tool then 
+                                if bedwars.ClientHandler:Get("ScytheDash"):CallServer({direction = Vector3.new(math.huge, math.huge, math.huge)}) then 
+                                    bedwarsStore.grapple = tick() + 1.5
+                                end
+                            end
+                        until (not Disabler.Enabled)
+                    end)
                 end
             end
-        end
-        
-        connection = game:GetService("RunService").Stepped:connect(function()
-            Aura()
-        end)     
-		wait()
-	
-	else
-	         if connection then
-			connection:Disconnect()
-		end
-	end
-	})
-end)
+        })
+    end)
 
+scythe disabler if you didnt have it
 runcode(function()
 	local FlyBetaVal = false
 	local FlyGrav = 3
