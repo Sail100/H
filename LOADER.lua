@@ -10,6 +10,8 @@ end
 
 wait(0.5)
 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+
 wait(0.5)
 
 repeat task.wait() until game:IsLoaded()
