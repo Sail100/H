@@ -296,8 +296,6 @@ end)
             end
         })
     end)
-
-scythe disabler if you didnt have it
 runcode(function()
 	local FlyBetaVal = false
 	local FlyGrav = 3
