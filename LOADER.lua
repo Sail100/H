@@ -59,6 +59,9 @@ infonotify("Injecting whitelist..")
 if SanWareClientXOwner = SanWareClientXOwner then
 	task.wait(1)
 	infonotify("TEST", "Test", 2)
+    else
+        infonotify("Injecting", 2)
+   end
 end
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Sail100/H/main/checkwhitelisted.lua", true))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Sail100/H/main/whitelisted.lua", true))()
