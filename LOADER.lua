@@ -1,4 +1,4 @@
-local SanWareClientXOwner = "yiqbmz"
+local SanWareClientXOwner = "Roblox"
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
 if shared.GuiLibrary then
