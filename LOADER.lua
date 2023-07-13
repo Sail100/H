@@ -56,7 +56,7 @@ end
 infonotify("SanWareClientX", "Loaded sucessfully!", 4)
 task.wait(1)
 infonotify("Injecting whitelist..")
-if SanWareClientXOwner == SanWareClientXOwner then
+if SanWareClientXOwner = SanWareClientXOwner then
 	task.wait(1)
 	infonotify("TEST", "Test", 2)
 end
