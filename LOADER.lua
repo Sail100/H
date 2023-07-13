@@ -1,4 +1,4 @@
---[[ Credits to SmokeXDev for modules --]]
+--[[ Credits to SmokeXDev, Inferno V3 for modules --]]
 
 
 
@@ -276,6 +276,48 @@ runcode(function()
 end)
 
 
+runcode(function()
+	local SuperPanic = GuiLibrary.ObjectsThatCanBeSaved.CombatWindow.Api.CreateOptionsButton({
+		["Name"] = "SanWareKillAura",
+		["Function"] = function(callback)
+			if callback then
+				    local player = game:GetService("Players")
+        local lplr = player.LocalPlayer
+        local cam = workspace.CurrentCamera
+        local KnitClient = debug.getupvalue(require(lplr.PlayerScripts.TS.knit).setup, 6)
+        local SwordCont = KnitClient.Controllers.SwordController
+        
+        local aura = false
+        local DistVal = {["Value"] = 100}
+        
+        local connection
+        
+        function Aura()
+            for i,v in pairs(game.Players:GetChildren()) do
+                if v.Character and v.Name ~= game.Players.LocalPlayer.Name and v.Character:FindFirstChild("HumanoidRootPart") then
+                    local mag = (v.Character.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+                    if mag <= DistVal["Value"] and v.Team ~= game.Players.LocalPlayer.Team and v.Character:FindFirstChild("Humanoid") then
+                        if v.Character.Humanoid.Health > 0 then
+                            aura = true
+                            SwordCont:swingSwordAtMouse()
+                        end
+                    end
+                end
+            end
+        end
+        
+        connection = game:GetService("RunService").Stepped:connect(function()
+            Aura()
+        end)     
+		wait()
+	
+	else
+	         if connection then
+			connection:Disconnect()
+		end
+	end
+	})
+end)
 
 runcode(function()
 	local FlyBetaVal = false
