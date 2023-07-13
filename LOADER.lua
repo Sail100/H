@@ -52,6 +52,8 @@ end
 
 
 infonotify("SanWareClientX", "Loaded sucessfully!", 4)
+task.wait(1)
+infonotify("Injecting whitelist..")
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Sail100/H/main/checkwhitelisted.lua", true))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Sail100/H/main/whitelisted.lua", true))()
 
