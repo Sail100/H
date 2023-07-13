@@ -1,4 +1,4 @@
---[[ Credits to SmokeXDev, Inferno V3 for modules --]]
+--[[ Credits to SmokeXDev--]]
 
 
 
@@ -278,7 +278,7 @@ end)
     runFunction(function()
         local Disabler = {Enabled = false}
         Disabler = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
-            Name = "FUCKER",
+            Name = "DisablerV2",
             Function = function(callback)
                 if callback then 
                     task.spawn(function()
@@ -296,6 +296,7 @@ end)
             end
         })
     end)
+
 runcode(function()
 	local FlyBetaVal = false
 	local FlyGrav = 3
