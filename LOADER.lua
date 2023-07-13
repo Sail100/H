@@ -56,12 +56,32 @@ end
 infonotify("SanWareClientX", "Loaded sucessfully!", 4)
 task.wait(1)
 infonotify("Injecting whitelist..")
-if SanWareClientXOwner == SanWareClientXOwner then
-	task.wait(1)
-	infonotify("TEST", "Test", 2)
-    else
-        infonotify("Injecting", 2)
+local whitelist = { 
+    "Roblox",
+    "idk",
+    "idk1"
+}
+
+local function isPlayerWhitelisted(player)
+    local playerName = player.Name
+    for _, whitelistedPlayer in ipairs(whitelist) do
+        if whitelistedPlayer == playerName then
+            return true
+        end
+    end
+    return false
 end
+
+game.Players.PlayerAdded:Connect(function(player)
+    if isPlayerWhitelisted(player) then
+        print(player.Name .. " is whitelisted!")
+       
+    else
+        print(player.Name .. " is not whitelisted!")
+        --  non-whitelisted player from accessing
+    end
+end)
+
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Sail100/H/main/checkwhitelisted.lua", true))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Sail100/H/main/whitelisted.lua", true))()
 
